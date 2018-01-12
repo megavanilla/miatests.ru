@@ -1,0 +1,69 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url('../img/bkg_old.jpg');
+}
+
+.page-main-container {
+    min-width: 420px;
+    width: 50%;
+    margin: 150px auto 2%;
+    padding: 5px;
+    overflow-x: auto;
+    background-color: white;
+    background-repeat: no-repeat;
+    border: 1px solid grey;
+    border-radius: 3px;
+}
+
+.results {
+    position: relative;
+    min-width: 410px;
+    overflow-x: hidden;
+}
+
+.results table {
+    border: 0;
+}
+
+.results table thead tr td, .results table tbody tr td{
+    border: 0;
+}
+
+.results table thead tr th {
+    font-weight: bold;
+    text-decoration: underline;
+    color: red;
+}
+
+.results table thead tr th:first-child {
+    text-align: left;
+}
+
+.results table thead tr th:nth-child(2) {
+    text-align: center;
+}
+
+.results table thead tr th:last-child {
+    text-align: right;
+}
+
+.results table tbody tr td:first-child {
+    max-width: 200px;
+    text-align: left;
+}
+
+.results table tbody tr td:nth-child(2) {
+    text-align: center;
+}
+
+.results table tbody tr td:last-child {
+    max-width: 200px;
+    color: green;
+    text-align: right;
+}

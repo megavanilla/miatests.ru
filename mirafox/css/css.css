@@ -1,0 +1,102 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+body {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    background: #F6F6F6;
+}
+
+body h3{
+    text-align: center;
+    margin: 30px 0 20px 0;
+}
+
+#cards, slider-cards{
+
+}
+
+.card {
+    display: none;
+    margin: 5px;
+    width: 230px;
+    height: 291px;
+    background: white;
+}
+
+.card .img-header {
+    margin: 0 auto;
+}
+
+.card .card-content {
+    position: relative;
+    margin: 0 15px;
+}
+
+.card-content > img {
+    position: absolute;
+    margin-left: 10px;
+    color: red;
+}
+
+.card-content > span {
+    font-weight: bold;
+}
+
+.card-content > span:nth-child(2) {
+    display: inline-block;
+    font-size: 12px;
+    color: #8DBF3A;
+    margin-left: 44px;
+}
+
+.card-content > span:nth-child(3) {
+    position: absolute;
+    font-size: 11px;
+    font-stretch: condensed;;
+    color: #13761C;
+    margin-left: 2px;
+}
+
+.userStat div {
+    display: inline-block;
+}
+
+.userStat div:last-child {
+    float: right;
+}
+
+.price span:last-child {
+    float: right;
+    color: #43962C;
+    font-weight: bold;
+}
+
+.orange_color {
+    color: orange;
+    font-weight: bold;
+}
+
+.grey_color {
+    color: #E3E3D9;
+}
+
+.grey_color_text {
+    color: #919191;
+}
+
+.img-warranty {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 45px;
+    width: 45px;
+}
+
+.img-label {
+}

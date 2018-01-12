@@ -1,0 +1,294 @@
+/*торнадо*/
+.weather_0{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 0 0;
+}
+/*тропический шторм*/
+.weather_1{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 0 0;
+}
+/*ураган*/
+.weather_2{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 0 0;
+}
+/*сильные грозы*/
+.weather_3{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 0 270px;
+}
+/*грозы*/
+.weather_4{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 0 420px;
+}
+/*дождь и снег*/
+.weather_5{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 0 240px;
+}
+/*дождь и дождь со снегом*/
+.weather_6{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 0 240px;
+}
+/*снег и дождь со снегом*/
+.weather_7{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 0 240px;
+}
+/*замерзающая морось*/
+.weather_8{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 0 390px;
+}
+/*моросящие дожди*/
+.weather_9{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 30px 450px;
+}
+/*ледяной дождь*/
+.weather_10{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 0 390px;
+}
+/*ливень*/
+.weather_11{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 0 300px;
+}
+/*ливень*/
+.weather_12{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 0 300px;
+}
+/*снегопад*/
+.weather_13{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 0 210px;
+}
+/*ливень с небольшим снегом*/
+.weather_14{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 0 240px;
+}
+/*метель*/
+.weather_15{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 0 0;
+}
+/*снег*/
+.weather_16{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 0 210px;
+}
+/*град*/
+.weather_17{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 0 210px;
+}
+/*дождь со снегом*/
+.weather_18{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 0 240px;
+}
+/*пыльно*/
+.weather_19{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 0 -30px;
+}
+/*туманы*/
+.weather_20{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 60px -30px;
+}
+/*туман*/
+.weather_21{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 60px -30px;
+}
+/*дымно*/
+.weather_22{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 60px -30px;
+}
+/*ветренно*/
+.weather_23{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 60px -30px;
+}
+/*ветренно*/
+.weather_24{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 60px -30px;
+}
+/*холодно*/
+.weather_25{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 30px 0;
+}
+/*облачно*/
+.weather_26{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 60px -30px;
+}
+/*главным образом облачно (ночь)*/
+.weather_27{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 60px -30px;
+}
+/*главным образом облачно (день)*/
+.weather_28{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 60px -30px;
+}
+/*переменная облачность (ночь)*/
+.weather_29{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 60px -30px;
+}
+/*переменаная облачность (день)*/
+.weather_30{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 60px -30px;
+}
+/*ясно (ночь)*/
+.weather_31{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 60px 0;
+}
+/*солнечно день*/
+.weather_32{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 60px 0;
+}
+/*ясно (ночь) */
+.weather_33{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 60px 0;
+}
+/*ясно (день)*/
+.weather_34{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 60px 0;
+}
+/*дождь с градом*/
+.weather_35{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 0 390px;
+}
+/*жарко*/
+.weather_36{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 0 0;
+}
+/*местами грозы*/
+.weather_37{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 0 420px;
+}
+/*местами грозы*/
+.weather_38{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 0 420px;
+}
+/*местами грозы*/
+.weather_39{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 0 420px;
+}
+/*местами проливные дожди*/
+.weather_40{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 0 330px;
+}
+/*сильный снегопад*/
+.weather_41{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 0 360px;
+}
+/*местами снегопад*/
+.weather_42{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 60px 360px;
+}
+/*сильные снегопады*/
+.weather_43{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 0 360px;
+}
+/*временеами облачно*/
+.weather_44{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 60px -30px;
+}
+/*ливни с грозой*/
+.weather_45{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 60px -150px;
+}
+/*снегопады*/
+.weather_46{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 0 360px;
+}
+/*местами ливни с грозой*/
+.weather_47{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 60px -150px;
+}
+/*не доступно*/
+.weather_3200{
+  height: 30px;
+  width: 30px;
+  background: url(../img/meteogram-symbols-30px.png) 0 0;
+}

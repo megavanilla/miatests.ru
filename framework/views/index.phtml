@@ -1,0 +1,39 @@
+<script type="text/javascript">
+  function testAjax(){
+    //open_modal_window('./test_ajax.php','','Проверка модального окна');
+    route_async(
+            './test_ajax.php',
+            'test_method',
+            {},
+            '',
+            function(data){
+              alert(dump_recurs(data,'Данные'));
+              console.info("Данные из AJAX запроса:");
+              console.info(data);
+            },
+            false,
+            true,
+            preloadImgHref);
+  }
+</script>
+<div class="alert alert-success" role="alert">
+    Добро пожаловать в фреймфорк!<br/>
+    <?php
+      global $db_pdo_mysql;
+      
+      dump([$this->debug]);
+      
+      $res = $db_pdo_mysql->exec_query('select * FROM `img_size_types`');
+      
+      echo ($this->debug->debug("В данном проекте следует смотреть содержимое движкаизнутри", '', 'INFO'));
+      echo ($this->debug->debug("Простая информация:", ['var_1'=>1,'var_2'=>'stroka'], 'INFO'));
+      echo ($this->debug->debug("Выборка данных с PDO:", $res, 'INFO'));
+
+      
+      echo ($this->debug->debug("Объекты в БД win_style_test:", $res, 'INFO'));
+    ?>
+</div>
+<div class="alert alert-success" role="alert">
+    <p>Проверка ajax</p>
+    <input type="button" value="Отправить Ajax запрос" onClick="testAjax();" />
+</div>

@@ -1,0 +1,5 @@
+#Кодировка по умолчанию
+AddDefaultCharset UTF-8
+
+#Запрет на просмотр директорий
+Options -Indexes +FollowSymLinks

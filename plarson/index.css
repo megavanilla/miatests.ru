@@ -1,0 +1,27 @@
+*{
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+html, body, div{
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+table {height: 100%; width: 100%; border: 1px; border-color: #000;}
+thead{background: #fcc;}
+table thead tr{min-height: 50px;}
+tbody tr td{vertical-align: top; max-height: 50px;}
+tbody tr td:nth-child(1){width: 200px; background: #cfc;}
+tbody tr td div{
+  white-space: nowrap;
+  overflow-x: hidden;
+  overflow-y: auto;
+  float:left
+}
+tfoot{background: #ffc;}
+tfoot tr{min-height: 100px;}
+tfoot tr th form{text-align: left;}
+tfoot tr th form label,
+  tfoot tr th form textarea,
+  tfoot tr th form input{vertical-align: middle;}

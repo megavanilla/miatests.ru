@@ -1,0 +1,119 @@
+#Кодировка по умолчанию
+AddDefaultCharset UTF-8
+
+#Запрет на просмотр директорий
+Options -Indexes +FollowSymLinks
+
+#Отключаем диалог загрузки для следующих файлов
+#В этом случае файлы автоматически будут загружаться посетителю
+# AddType application/octet-stream .pdf 
+AddType application/octet-stream .zip
+
+<IfModule mod_rewrite.c>
+	
+    RewriteEngine On
+    RewriteBase /
+
+    #Блокируем все ссылки, содержащие script
+    RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+    #Блокируем все скрипты, которые пытаются изменить переменные PHP Globals:
+    RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+    #Блокируем все скрипты, которые пытаются изменить переменную _REQUEST:
+    RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+    #Перенаправляем все подобные на страницу с ошибкой 403 — запрещено
+    RewriteRule ^(.*)$ index.php [F,L]
+    
+	#Переадресация адреса каталога без слэша на со слэшом
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_URI} !(.*\..*|.*/)$
+	RewriteRule ^(.*)$ $1/ [R=301,L]
+    
+        #Переадресация с www на без www
+	#RewriteCond %{HTTP_HOST} ^www\.(.*) [NC]
+	#RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
+
+	#Переадресация на защищенный протокол если он не таковой
+        #RewriteCond %{SERVER_PORT} !^443$
+	#RewriteCond %{HTTPS} off
+	#RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+	#Переадресация с УРЛ-ов каталогов сайта index.php, index.htm, index.html на каталог
+	RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
+	RewriteRule ^index\.php$ http://%{HTTP_HOST}/%{REQUEST_URI} [R=301,L]
+
+	RewriteCond %{THE_REQUEST}/%{REQUEST_URI} ^[A-Z]{3,9}\ /index\.html\ HTTP/
+	RewriteRule ^index\.html$ http://%{HTTP_HOST}/%{REQUEST_URI} [R=301,L]
+    
+</IfModule>
+
+#ErrorDocument 100 ./error.php?error=100
+#ErrorDocument 101 ./error.php?error=101
+#ErrorDocument 102 ./error.php?error=102
+#ErrorDocument 200 ./error.php?error=200
+#ErrorDocument 201 ./error.php?error=201
+#ErrorDocument 202 ./error.php?error=202
+#ErrorDocument 203 ./error.php?error=203
+#ErrorDocument 204 ./error.php?error=204
+#ErrorDocument 205 ./error.php?error=205
+#ErrorDocument 206 ./error.php?error=206
+#ErrorDocument 207 ./error.php?error=207
+#ErrorDocument 226 ./error.php?error=226
+#ErrorDocument 300 ./error.php?error=300
+#ErrorDocument 301 ./error.php?error=301
+#ErrorDocument 302 ./error.php?error=302
+#rrorDocument 303 ./error.php?error=303
+#ErrorDocument 304 ./error.php?error=304
+#ErrorDocument 305 ./error.php?error=305
+
+##ErrorDocument 306 ./error.php?error=306
+
+#ErrorDocument 307 ./error.php?error=307
+#ErrorDocument 400 ./error.php?error=400
+#ErrorDocument 401 ./error.php?error=401
+#ErrorDocument 402 ./error.php?error=402
+#ErrorDocument 403 ./error.php?error=403
+#ErrorDocument 404 ./error.php?error=404
+#ErrorDocument 405 ./error.php?error=405
+#ErrorDocument 406 ./error.php?error=406
+#ErrorDocument 407 ./error.php?error=407
+#ErrorDocument 408 ./error.php?error=408
+#ErrorDocument 409 ./error.php?error=409
+#ErrorDocument 410 ./error.php?error=410
+#ErrorDocument 411 ./error.php?error=411
+#ErrorDocument 412 ./error.php?error=412
+#ErrorDocument 413 ./error.php?error=413
+#ErrorDocument 414 ./error.php?error=414
+#ErrorDocument 415 ./error.php?error=415
+#ErrorDocument 416 ./error.php?error=416
+#ErrorDocument 417 ./error.php?error=417
+
+##ErrorDocument 418 ./error.php?error=418
+
+#ErrorDocument 422 ./error.php?error=422
+#ErrorDocument 423 ./error.php?error=423
+#ErrorDocument 424 ./error.php?error=424
+
+##ErrorDocument 425 ./error.php?error=425
+
+#ErrorDocument 426 ./error.php?error=426
+#ErrorDocument 428 ./error.php?error=428
+#ErrorDocument 429 ./error.php?error=429
+#ErrorDocument 431 ./error.php?error=431
+##ErrorDocument 434 ./error.php?error=434
+#ErrorDocument 444 ./error.php?error=444
+#ErrorDocument 449 ./error.php?error=449
+#ErrorDocument 450 ./error.php?error=450
+#ErrorDocument 451 ./error.php?error=451
+#ErrorDocument 500 ./error.php?error=500
+#ErrorDocument 501 ./error.php?error=501
+#ErrorDocument 502 ./error.php?error=502
+#ErrorDocument 503 ./error.php?error=503
+#ErrorDocument 504 ./error.php?error=504
+#ErrorDocument 505 ./error.php?error=505
+#ErrorDocument 506 ./error.php?error=506
+#ErrorDocument 507 ./error.php?error=507
+
+##ErrorDocument 509 ./error.php?error=509
+##ErrorDocument 510 ./error.php?error=510
+##ErrorDocument 511 ./error.php?error=511

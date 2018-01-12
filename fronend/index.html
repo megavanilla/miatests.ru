@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+  <head>
+    <title>Тестовое задание</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Angular Material style sheet -->
+    <link rel="stylesheet" href="./css/angular-material.min.css">
+    <link rel="stylesheet" href="./css/styles.min.css">
+    <link rel="stylesheet" href="./css/style_manual.css">
+
+
+  </head>
+  <body ng-app="MyApp" layout="row" ng-cloak>
+    <style>
+
+    </style>
+  <md-sidenav layout="column" class="sidenav1" md-is-locked-open='true'>
+
+    <div class="user_box">
+      <img src="./img/userPhoto.png" alt="userPhoto" />
+      <span>Trevor Reyes</span>
+    </div>
+    <table id="sidenav" style="width: 100%;">
+      <tr>
+        <td class="left_al" style="color:#6B6B99;">Projects</td>
+        <td class="right_al"><i data-icons8="&#xf109;"></i></td>
+      </tr>
+      <tr>
+        <td class="left_al">Private</td>
+        <td class="right_al">8</td>
+      </tr>
+      <tr>
+        <td class="left_al">Decode</td>
+        <td class="right_al">25</td>
+      </tr>
+      <tr>
+        <td class="left_al">Family</td>
+        <td class="right_al">3</td>
+      </tr>
+      <tr>
+        <td class="left_al">Cookie</td>
+        <td class="right_al">13</td>
+      </tr>
+    </table>
+    <div id="logout">Logout</div>
+  </md-sidenav>
+
+  <md-content flex layout="column">
+    <ng-view>
+      <br />
+      <br />
+      <br />
+      <div layout="row" class="content_box" layout-padding layout-wrap style="padding-bottom: 12px;" ng-cloak>
+        <md-whiteframe class="md-whiteframe-14dp layout-align-center-center layout-row flex-sm-45 flex-gt-sm-35 flex-gt-md-25" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout="" layout-align="center center">
+          <img src="./img/citcle.png" class="img_circle" /><span><br />Create a company<br /></span>
+        </md-whiteframe>
+      </div>
+      <div layout="row" layout-padding layout-wrap style="padding-bottom: 12px;" ng-cloak>
+        <md-whiteframe class="md-whiteframe-18dp layout-align-center-center layout-row flex-sm-45 flex-gt-sm-35 flex-gt-md-25" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout="" layout-align="center center">
+          <img src="./img/citcle.png" class="img_circle" /><span><br />Call in barber shop<br /></span>
+        </md-whiteframe>
+      </div>
+      <div layout="row" layout-padding layout-wrap style="padding-bottom: 12px;" ng-cloak>
+        <md-whiteframe class="md-whiteframe-18dp layout-align-center-center layout-row flex-sm-45 flex-gt-sm-35 flex-gt-md-25" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout="" layout-align="center center">
+          <img src="./img/citcle.png" class="img_circle" /><span><br />Earn a lot of money<br /></span>
+        </md-whiteframe>
+      </div>
+      <div layout="row" layout-padding layout-wrap style="padding-bottom: 12px;" ng-cloak>
+        <md-whiteframe class="md-whiteframe-18dp layout-align-center-center layout-row flex-sm-45 flex-gt-sm-35 flex-gt-md-25" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout="" layout-align="center center">
+          <img src="./img/citcle.png" class="img_circle" /><span><br />Go to the shop<br /></span>
+        </md-whiteframe>
+      </div>
+      <div layout="row" layout-padding layout-wrap style="padding-bottom: 12px;" ng-cloak>
+        <md-whiteframe class="md-whiteframe-18dp layout-align-center-center layout-row flex-sm-45 flex-gt-sm-35 flex-gt-md-25" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout="" layout-align="center center">
+          <img src="./img/citcle.png" class="img_circle" /><span><br />Buy gifts<br /></span>
+        </md-whiteframe>
+      </div>
+      <div layout="row" layout-padding layout-wrap style="padding-bottom: 12px;" ng-cloak>
+        <md-whiteframe class="md-whiteframe-18dp layout-align-center-center layout-row flex-sm-45 flex-gt-sm-35 flex-gt-md-25" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout="" layout-align="center center">
+          <img src="./img/citcle.png" class="img_circle" /><span><br />Brush teeth<br /></span>
+        </md-whiteframe>
+      </div>
+      <div layout="row" layout-padding layout-wrap style="padding-bottom: 12px;" ng-cloak>
+        <md-whiteframe class="md-whiteframe-18dp layout-align-center-center layout-row flex-sm-45 flex-gt-sm-35 flex-gt-md-25" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout="" layout-align="center center">
+          <img src="./img/citcle.png" class="img_circle" /><span><br />Buy a plane tickets<br /></span>
+        </md-whiteframe>
+      </div>
+      <div layout="row" layout-padding layout-wrap style="padding-bottom: 12px;" ng-cloak>
+        <md-whiteframe class="md-whiteframe-18dp layout-align-center-center layout-row flex-sm-45 flex-gt-sm-35 flex-gt-md-25" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout="" layout-align="center center">
+          <img src="./img/citcle.png" class="img_circle" /><span><br />Fly away to the Thailand<br /></span>
+        </md-whiteframe>
+      </div>
+    </ng-view>
+  </md-content>
+ 
+  
+  <!--<script src="./js/angular.js"></script>-->
+  <!-- Angular Material requires Angular.js Libraries -->
+
+  <script src="./js/angular.min.js"></script>
+
+  <script src="./js/angular-animate.min.js"></script>
+  <script src="./js/angular-aria.min.js"></script>
+  <script src="./js/angular-messages.min.js"></script>
+
+  <!-- Angular Material Library -->
+  <script src="./js/angular-material.min.js"></script>
+  <script src="./js/style_manual.js"></script>
+</body>
+</html>

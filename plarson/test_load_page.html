@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+
+    <title>Тест загрузки страницы</title>
+
+    <!-- МЕТА -->
+
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <meta name="description" content="Описания странички">
+    <meta name="keywords" content="Какие-то ключевые слова">
+
+    <!-- ИКОНКА -->
+
+    <link rel="shortcut icon" href="./favicon.ico?v=1.0" type="image/x-icon">
+
+    <!-- СТИЛИ -->
+    <link type="text/css" rel="stylesheet" href="./index.css"  media="all">
+
+    <script type="text/javascript">
+      function sleep(ms) {
+        ms += new Date().getTime();
+        while (new Date() < ms){}
+      } 
+      function load_page(preload_func, loading_func, loaded_func) {
+        if (preload_func) {
+          preload_func();
+        }
+        if (loading_func) {
+          window.onload = loading_func();
+        }
+        if (loaded_func) {
+          document.addEventListener("DOMContentLoaded", loaded_func);
+        }
+      }
+
+      load_page(
+        /*До загрузки*/
+        function () {
+          panel = document.createElement('div');
+          panel.innerHTML = 'Это просто текст';
+          console.info('Загрузка страницы началась!');
+          sleep(1000);
+        },
+        /*Во время загрузки*/
+        function () {
+          console.info('Выполняется загрузка страницы!');
+          sleep(1000);
+        },
+        /*После загрузки*/
+        function () {
+          console.info('Загрузка страницы завершена!');
+          document.body.appendChild(panel);
+          sleep(1000);
+        }
+      );
+
+    </script>
+  </head>
+  <body>
+  </body>
+</html>

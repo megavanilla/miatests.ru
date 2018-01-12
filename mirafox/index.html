@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Language" content="ru"/>
+    <meta name="viewport" content="width=1000"/>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <link href="css/css.css" rel="stylesheet" type="text/css"/>
+    <title>Тестовое задание для Mirafox</title>
+</head>
+<body>
+<h3>Список карточек</h3>
+<div id="cards"></div>
+<h3>Слайдер карточек</h3>
+<div id="slider-cards"></div>
+<div id="tmpl_card" class="card">
+    <div class="img-header">
+        <img src="img/header.png" alt="100% Жизни">
+    </div>
+    <div class="card-content">
+        <img src="img/label.png">
+        <span>100%</span>
+        <span>тематические форумы ручное размещение</span>
+        <p>Lorem ipsum &ndash; dolor sit <br> amet, consectetuer adipiscing elit, sed diam nonummy...</p>
+        <div class="userStat">
+            <div>
+                <span class="grey_color">&#9679;</span>
+                <span class="grey_color_text">userName</span>
+            </div>
+            <div>
+                <span class="orange_color">&#9733;</span>
+                <span class="orange_color">5.0</span>
+                <span class="grey_color_text">(260)</span>
+            </div>
+        </div>
+        <hr>
+        <div class="price">
+            <span class="grey_color">&#10084;</span>
+            <span>от 500&#8381;</span>
+        </div>
+    </div>
+</div>
+<script>
+    for (var i = 0; i < 20; i++) {
+        $("#tmpl_card").clone().attr('id', 'card_' + i).css({"display": "inline-block"}).appendTo("#cards");
+    }
+    for (var i = 0; i < 5; i++) {
+        $("#tmpl_card").clone().attr('id', 'slider-card_' + i).css({"display": "inline-block"}).appendTo("#slider-cards");
+    }
+</script>
+</body>
+</html>

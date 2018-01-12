@@ -1,0 +1,112 @@
+.user_box
+{
+    height: 100px;
+    width: 247px;
+    font-size: 24px;
+    font-style: normal;
+    text-align: center;
+    padding: 10px 0px;
+    display: flex;
+}
+.user_box img {
+    height: 100px;
+    width: 126px;
+}
+.user_box span {
+    margin: auto;
+    color: #ffffff;
+}
+.content_box
+{
+    padding: 10px 0px;
+    display: flex;
+}
+.content_box img {
+    height: 35px;
+    width: 35px;
+}
+.content_box span {
+    display: table-cell;
+    font-weight: bold;
+}
+md-sidenav  {
+    width: 342px;height:100%;
+    padding: 20px;
+    background-color: #292C33;
+    color: #fff;
+}
+
+#logout{
+    position: absolute;
+    padding: 20px;
+    bottom: 15px;
+}
+
+md-content {
+    height:100%;
+    padding:0px;
+    background-color: #F7F7F7;
+}
+ng-view {
+    margin: 10px auto;
+    width: 750px;
+}
+#sidenav{
+    border-spacing:15px;
+}
+.left_al{
+    text-align: left;
+}
+
+.left-al:first-child{        
+    color: #6B6B99;
+}
+
+.right_al{
+    text-align: right;
+}
+
+.img_circle{
+    height: 35px;
+    width: 35px;
+    margin: 15px 0;
+}
+
+.whiteframedemoBasicClassUsage {
+    /* For breakpoint `-xs` */
+    /* For breakpoint `-sm` */
+    /* For breakpoint `-md` */
+    /* For breakpoint `-gt-md` */ }
+.whiteframedemoBasicClassUsage md-whiteframe {
+    background: #fff;
+    margin: 30px;
+    height: 100px;
+    line-height: 100px;
+}
+@media (max-width: 599px) {
+    .whiteframedemoBasicClassUsage md-whiteframe {
+        margin: 7px;
+        height: 50px;
+        background-color: #c8e4fa; }
+    .whiteframedemoBasicClassUsage md-whiteframe > span {
+        font-size: 0.4em; } }
+@media (min-width: 600px) and (max-width: 959px) {
+    .whiteframedemoBasicClassUsage md-whiteframe {
+        margin: 20px;
+        height: 75px; }
+    .whiteframedemoBasicClassUsage md-whiteframe > span {
+        font-size: 0.6em; } }
+@media (min-width: 960px) and (max-width: 1279px) {
+    .whiteframedemoBasicClassUsage md-whiteframe {
+        margin: 20px;
+        height: 90px;
+        background-color: #fcddde; }
+    .whiteframedemoBasicClassUsage md-whiteframe > span {
+        font-size: 0.9em; } }
+@media (min-width: 1280px) {
+    .whiteframedemoBasicClassUsage md-whiteframe {
+        margin: 25px;
+        height: 100px;
+        background-color: #F2FCE2; }
+    .whiteframedemoBasicClassUsage md-whiteframe > span {
+        font-size: 1.0em; } }
