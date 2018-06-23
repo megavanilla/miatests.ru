@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Тестовое задание</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  </head>
-  <style>
-    body{
-        width: 750px;
-        margin: 0 auto;
-    }
-  </style>
-  <body>
+<?php
+if(is_file('../header.tpl.php')){
+    require_once('../header.tpl.php');
+}
+?>
       <fieldset>
         <legend>Поставленные задачи:</legend>
         <section>
@@ -64,5 +54,8 @@
           </p>
         </section>
       </fieldset>
-  </body>
-</html>
+<?php
+if(is_file('../footer.tpl.php')){
+    require_once('../footer.tpl.php');
+}
+?>

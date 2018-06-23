@@ -1,24 +1,8 @@
-<!DOCTYPE html>
-<html>
-<!--header-->
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>Тестовые задания:</title>
-    <meta name="title" content="Разные тестовые задания"/>
-    <link rel="stylesheet" href="./web/bundles/bootstrap-3.3.7/css/bootstrap.css">
-    <!--<link rel="stylesheet" href="./web/bundles/dataTables/jquery.dataTables.min.css">-->
-    <link rel="stylesheet" href="./web/css/main.css">
-    <script type="text/javascript" src="./web/js/jquery-3.1.1.min.js"></script>
-    <script type="text/javascript" src="./web/bundles/bootstrap-3.3.7/js/bootstrap.js"></script>
-    <!--<script type="text/javascript" src="./web/bundles/dataTables/jquery.dataTables.min.js"></script>-->
-    <script type="text/javascript" src="./web/js/main.js"></script>
-</head>
-<!--/header-->
-<!--body-->
-<body>
-<div id="wrap" class="page-main-container">
-    <div class="results">
+<?php
+    if(is_file('./header.tpl.php')){
+        require_once('./header.tpl.php');
+    }
+?>
         <h3>Тестовые задания:</h3>
         <hr>
         <table class="table table-hover">
@@ -96,8 +80,8 @@
             </tr>
             </tfoot>
         </table>
-    </div>
-</div>
-</body>
-<!--body-->
-</html>
+<?php
+if(is_file('./footer.tpl.php')){
+    require_once('./footer.tpl.php');
+}
+?>

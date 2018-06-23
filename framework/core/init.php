@@ -10,6 +10,7 @@ if (is_file(__DIR__.'/Constants.php')) {
 }
 else
 {
+    print(__DIR__.'/Constants.php');
     exit('Не удалось инициировать класс констант');
 }
 

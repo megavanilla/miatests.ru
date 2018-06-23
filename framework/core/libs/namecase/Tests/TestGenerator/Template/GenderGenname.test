@@ -1,6 +1,0 @@
-
-    public function testGenDetect{% id %}()
-    {
-        $this->object->setFirstName('{% name %}');
-        $this->assertEquals('{% gender %}-{% name %}', $this->object->genderAutoDetect().'-{% name %}');
-    }

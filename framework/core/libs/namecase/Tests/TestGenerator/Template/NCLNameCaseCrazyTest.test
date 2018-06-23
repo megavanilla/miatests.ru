@@ -1,5 +1,0 @@
-
-    public function testCrazy{% id %}()
-    { 
-        $this->assertEquals(explode(',','{% OK %}'), $this->object->q('{% name %}'));
-    }

@@ -41,7 +41,7 @@ AddType application/octet-stream .exe
     #Перенаправляем на нужный exe файл
     #
     #Если нужно перенаправление только для все exe файлов
-    RewriteRule ^/auslogics/files(.*).exe$ /auslogics/test_1.php [L,R=301]
+    RewriteRule ^files(.*).exe$ /auslogics/test_1.php [L,R=301]
     #Если нужно перенаправление только для все файлов
     #RewriteRule ^files(.*)$ /test_1.php [L,R=301]
 	

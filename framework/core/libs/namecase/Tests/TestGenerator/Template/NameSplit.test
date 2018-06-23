@@ -1,5 +1,0 @@
-
-    public function testSplDetect{% id %}()
-    {
-        $this->assertEquals('{% gender %}-{% name %}', trim($this->object->getFullNameFormat('{% name %}')).'-{% name %}');
-    }
