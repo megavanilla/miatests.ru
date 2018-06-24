@@ -49,6 +49,11 @@
                     <td><a href="https://github.com/megavanilla/">.../megavanilla/fronend</a></td>
                     <td>CSS</td>
                 </tr>
+                <tr>
+                    <td><a href="./react-app">reactApp</a></td>
+                    <td><a href="https://github.com/megavanilla/">.../megavanilla/reactApp</a></td>
+                    <td>CSS</td>
+                </tr>
                 <!--
                 <tr>
                     <td><a href="./test_task">test_task</a></td>
