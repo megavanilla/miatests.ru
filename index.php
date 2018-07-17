@@ -15,6 +15,11 @@
             </thead>
             <tbody>
                 <tr>
+                    <td><a href="./m1-shop">m1-shop</a>:</td>
+                    <td><a href="https://github.com/megavanilla/">.../megavanilla/profit</a></td>
+                    <td>PHP, JS, CSS, Bootstrap, Jquery</td>
+                </tr>
+                <tr>
                     <td><a href="./profit">profit</a>:</td>
                     <td><a href="https://github.com/megavanilla/">.../megavanilla/profit</a></td>
                     <td>PHP, JS, CSS, Bootstrap, Jquery</td>
@@ -49,11 +54,13 @@
                     <td><a href="https://github.com/megavanilla/">.../megavanilla/fronend</a></td>
                     <td>CSS</td>
                 </tr>
+                <!--
                 <tr>
                     <td><a href="./react-app">reactApp</a></td>
                     <td><a href="https://github.com/megavanilla/">.../megavanilla/reactApp</a></td>
                     <td>CSS</td>
                 </tr>
+                -->
                 <!--
                 <tr>
                     <td><a href="./test_task">test_task</a></td>
