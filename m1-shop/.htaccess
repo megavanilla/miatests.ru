@@ -22,13 +22,16 @@ Options -Indexes +FollowSymLinks
     #Переадресация адреса каталога без слэша на со слэшом
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_URI} !(.*\..*|.*/)$
-    RewriteRule ^(.*)$ $1/ [R=301,L]
+    RewriteRule ^/m1-shop/(.*)$ $1/ [R=301,L]
 
 
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_URI} !^/web/
-    RewriteRule ^(.*)/(.*)/ /?controller=$1&method=$2 [L,QSA]
-    RewriteRule ^index.php/(.*)/(.*)/? /?controller=$1&method=$2 [L,QSA]
+    RewriteCond %{REQUEST_URI} !^/m1-shop/web/
+
+    RewriteRule ^(.*)/(.*)/ /m1-shop/index.php?controller=$1&method=$2 [L,QSA]
+    RewriteRule ^/m1-shop/(.*)/(.*) /m1-shop/index.php?controller=$1&method=$2 [L,QSA]
+    RewriteRule ^/m1-shop/(.*)/(.*)/ /m1-shop/index.php?controller=$1&method=$2 [L,QSA]
+    # RewriteRule ^/m1-shop/index.php /m1-shop/index.php?controller=blog&method=getList [L,QSA]
 
 </IfModule>

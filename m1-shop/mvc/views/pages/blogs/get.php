@@ -5,7 +5,7 @@ use mvc\libs\Request;
 $Request = new Request();
 global $Configs;
 
-$uploadDir = '/m1-shop/'.$Request->getVariable($Configs, ['conf', 'main', 'uploads'], '');
+$uploadDir = $Request->getVariable($Configs, ['conf', 'main', 'uploads'], '');
 $params = (!empty($params) && is_array($params)) ? $params[0] : null;
 if (!$params) {
   exit;

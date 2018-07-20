@@ -12,7 +12,7 @@
   </div>
   <div class="form-check">
     <label class="form-check-label" for="ava">Изображение</label>
-    <input type="file" class="form-check-input" id="ava" name="ava">
+    <input type="file" accept="image/*" class="form-check-input" id="ava" name="ava">
   </div>
   <hr />
   <button type="button" class="btn btn-success" onclick="addNote();">Добавить</button>

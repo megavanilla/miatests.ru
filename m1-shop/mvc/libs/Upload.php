@@ -18,10 +18,10 @@ class Upload extends Request
    * @var array - массив с расширениями файлов для загрузки
    */
   protected $uploadFileExtension = [
-      'jpg',
-      'jpeg',
-      'png',
-      'gif'
+    'jpg',
+    'jpeg',
+    'png',
+    'gif'
   ];
 
   /**
@@ -55,44 +55,45 @@ class Upload extends Request
    *
    * @param string $folder - Каталог, куда будет сохранятся файл
    * @param string $field - поле из формы, в котором искать массив FILES
-   * @param bool|string   $saveName - сохранять ли имя файла при загрузке
-   * @param int    $uploadMaxFileSize - максимальный размер файла для загрузки
-   * @param array  $uploadFileExtension - массив с расширениями файлов для загрузки
+   * @param bool|string $saveName - сохранять ли имя файла при загрузке
+   * @param int $uploadMaxFileSize - максимальный размер файла для загрузки
+   * @param array $uploadFileExtension - массив с расширениями файлов для загрузки
    */
-  function __construct($folder = '', $field = '', $saveName = false, $uploadMaxFileSize = 4000000, $uploadFileExtension = [])
-  {
-    if (empty($folder))
-    {
+  function __construct(
+    $folder = '',
+    $field = '',
+    $saveName = false,
+    $uploadMaxFileSize = 4000000,
+    $uploadFileExtension = []
+  ) {
+    if (empty($folder)) {
       exit("Не задана папка для сохранения файла.");
-    }
-    else
-    {
-      $uploadDir = __DIR__ . '/' . trim($folder, '/');
-      if (!is_dir($uploadDir))
-      {
+    } else {
+      $uploadDir = $_SERVER['DOCUMENT_ROOT'] . $folder;
+      if (!is_dir($uploadDir)) {
         mkdir($uploadDir, 0777, true);
+      }
+
+      if (!is_dir($uploadDir)) {
+        exit("Не корректная папка для сохранения файла." . $uploadDir);
       }
 
       $this->uploadFolder = $uploadDir;
     }
 
-    if (!empty($uploadMaxFileSize))
-    {
+    if (!empty($uploadMaxFileSize)) {
       $this->uploadMaxFileSize = $uploadMaxFileSize;
     }
 
-    if (!empty($uploadFileExtension))
-    {
+    if (!empty($uploadFileExtension)) {
       $this->uploadFileExtension = $uploadFileExtension;
     }
 
-    if (!empty($field))
-    {
+    if (!empty($field)) {
       $this->field = $field;
     }
 
-    if (!empty($saveName))
-    {
+    if (!empty($saveName)) {
       $this->saveName = $saveName;
     }
   }
@@ -106,8 +107,7 @@ class Upload extends Request
    */
   public function generateName($string = '')
   {
-    if (!empty($string))
-    {
+    if (!empty($string)) {
       $salt = time() . uniqid();
       $name = $string . $salt;
       return sha1($name);
@@ -122,17 +122,13 @@ class Upload extends Request
   public function setName()
   {
     // если не сохраняем имя
-    if (false === $this->saveName)
-    {
-      if (is_array($this->actual[$this->field]))
-      {
-        if (is_array($this->actual[$this->field]['name']))
-        {
-          for ($i = 0; $i < $ic = count($this->actual[$this->field]['name']); $i++)
+    if (false === $this->saveName) {
+      if (is_array($this->actual[$this->field])) {
+        if (is_array($this->actual[$this->field]['name'])) {
+          for ($i = 0; $i < $ic = count($this->actual[$this->field]['name']); $i++) {
             $this->actual[$this->field]['name'][$i] = $this->generateName($this->actual[$this->field]['name'][$i]);
-        }
-        else
-        {
+          }
+        } else {
           $this->actual[$this->field]['name'] = $this->generateName($this->actual[$this->field]['name']);
         }
       }
@@ -144,33 +140,22 @@ class Upload extends Request
    */
   public function validateExtension()
   {
-    if (!empty($this->actual[$this->field]))
-    {
+    if (!empty($this->actual[$this->field])) {
       // если передан массив
-      if (is_array($this->actual[$this->field]['type']))
-      {
-        for ($i = 0; $i < $ic = count($this->actual[$this->field]['type']); $i++)
-        {
+      if (is_array($this->actual[$this->field]['type'])) {
+        for ($i = 0; $i < $ic = count($this->actual[$this->field]['type']); $i++) {
           $ext = pathinfo($this->actual[$this->field]['name'][$i], PATHINFO_EXTENSION);
-          if (!in_array($ext, $this->uploadFileExtension))
-          {
+          if (!in_array($ext, $this->uploadFileExtension)) {
             $this->error[] = "Данный вид файлов не поддерживается.";
-          }
-          else
-          {
+          } else {
             $this->actual[$this->field]['ext'][$i] = $ext;
           }
         }
-      }
-      else
-      {
+      } else {
         $ext = pathinfo($this->actual[$this->field]['name'], PATHINFO_EXTENSION);
-        if (!in_array($ext, $this->uploadFileExtension))
-        {
+        if (!in_array($ext, $this->uploadFileExtension)) {
           $this->error[] = "Данный вид файлов не поддерживается.";
-        }
-        else
-        {
+        } else {
           $this->actual[$this->field]['ext'] = $ext;
         }
       }
@@ -182,23 +167,16 @@ class Upload extends Request
    */
   public function validateSize()
   {
-    if (!empty($this->actual[$this->field]))
-    {
+    if (!empty($this->actual[$this->field])) {
       // если передан массив
-      if (is_array($this->actual[$this->field]['size']))
-      {
-        for ($i = 0; $i < $ic = count($this->actual[$this->field]['size']); $i++)
-        {
-          if ($this->actual[$this->field]['size'][$i] > $this->uploadMaxFileSize)
-          {
+      if (is_array($this->actual[$this->field]['size'])) {
+        for ($i = 0; $i < $ic = count($this->actual[$this->field]['size']); $i++) {
+          if ($this->actual[$this->field]['size'][$i] > $this->uploadMaxFileSize) {
             $this->error[] = "Файл больше допустимого размера";
           }
         }
-      }
-      else
-      {
-        if ($this->actual[$this->field]['size'] > $this->uploadMaxFileSize)
-        {
+      } else {
+        if ($this->actual[$this->field]['size'] > $this->uploadMaxFileSize) {
           $this->error[] = "Файл больше допустимого размера";
         }
       }
@@ -222,8 +200,7 @@ class Upload extends Request
    */
   public function validate()
   {
-    if (!empty($this->actual[$this->field]))
-    {
+    if (!empty($this->actual[$this->field])) {
       $this->validateSize();
       $this->validateExtension();
       return $this->isValid();
@@ -242,71 +219,57 @@ class Upload extends Request
     $state = false;
     $result = []; // массив с путями для файлов
     $this->getFiles();
-    if ($this->validate())
-    {
-      if (false === $this->saveName)
-      {
+    if ($this->validate()) {
+      if (false === $this->saveName) {
         $this->setName();
       }
 
       if (is_array($this->actual[$this->field])
-          && is_array($this->actual[$this->field]['name'])
-      )
-      {
-        for ($i = 0; $i < $ic = count($this->actual[$this->field]['name']); $i++)
-        {
-          if (false !== $this->saveName)
-          {
+        && is_array($this->actual[$this->field]['name'])
+      ) {
+        for ($i = 0; $i < $ic = count($this->actual[$this->field]['name']); $i++) {
+          if (false !== $this->saveName) {
             $destination = $this->uploadFolder . "/" . $this->actual[$this->field]['name'][$i];
-          }
-          else
-          {
+          } else {
             $destination = $this->uploadFolder . "/" . $this->actual[$this->field]['name'][$i] . "." . $this->actual[$this->field]['ext'][$i];
           }
 
           $statusByPicture = move_uploaded_file(
-              $this->actual[$this->field]['tmp_name'][$i],
-              $destination
+            $this->actual[$this->field]['tmp_name'][$i],
+            $destination
           );
 
           $result[$i] = [
-              'path' => str_replace($this->uploadFolder . "/", '', $destination),
-              'state' => $statusByPicture
+            'path' => str_replace($this->uploadFolder . "/", '', $destination),
+            'state' => $statusByPicture
           ];
 
           $this->resizeImage($destination, $destination);
 
-          if (!$statusByPicture)
-          {
+          if (!$statusByPicture) {
             break;
           }
         }
-      }
-      else
-      {
-        if (false !== $this->saveName)
-        {
+      } else {
+        if (false !== $this->saveName) {
           $destination = $this->uploadFolder . "/" . $this->actual[$this->field]['name'];
-        }
-        else
-        {
+        } else {
           $destination = $this->uploadFolder . "/" . $this->actual[$this->field]['name'] . "." . $this->actual[$this->field]['ext'];
         }
 
         $state = move_uploaded_file(
-            $this->actual[$this->field]['tmp_name'],
-            $destination
+          $this->actual[$this->field]['tmp_name'],
+          $destination
         );
         $result[0] = [
-            'path' => str_replace($this->uploadFolder . "/", '', $destination),
-            'state' => $state
+          'path' => str_replace($this->uploadFolder . "/", '', $destination),
+          'state' => $state
         ];
         $this->resizeImage($destination, $destination);
       }
     }
 
-    if (false === $state)
-    {
+    if (false === $state) {
       $this->error[] = 'Непредвиденная ошибка.';
     }
 
@@ -327,15 +290,19 @@ class Upload extends Request
    */
   public function resizeImage($src, $dst, $height = 340, $width = 340, $crop = 0)
   {
-    if(!is_file($src)){return false;}
+    if (!is_file($src)) {
+      return false;
+    }
 
-    if (!list($w, $h) = getimagesize($src))
+    if (!list($w, $h) = getimagesize($src)) {
       return "Неподдерживаемый тип изображения!";
+    }
     //Получаем расширение файла
     //$type = strtolower(mb_substr(strrchr($src, "."), 1));
     $type = mb_strtolower(mb_substr(mb_strrchr($src, "."), 1), 'UTF-8');
-    if ($type == 'jpeg')
+    if ($type == 'jpeg') {
       $type = 'jpg';
+    }
     //Создаем новое изображение, в зависимости от расширения файла
     switch ($type) {
       case 'bmp':
@@ -355,21 +322,21 @@ class Upload extends Request
     }
     // Изменение размера
     if ($crop) {
-      if ($w < $width or $h < $height)
+      if ($w < $width or $h < $height) {
         return "Изображение и так маленькое!";
+      }
       $ratio = max($width / $w, $height / $h);
-      $h     = $height / $ratio;
-      $x     = ($w - $width / $ratio) / 2;
-      $w     = $width / $ratio;
-    }
-    else
-    {
-      if ($w < $width and $h < $height)
+      $h = $height / $ratio;
+      $x = ($w - $width / $ratio) / 2;
+      $w = $width / $ratio;
+    } else {
+      if ($w < $width and $h < $height) {
         return "Изображение и так маленькое!";
+      }
       $ratio = min($width / $w, $height / $h);
       $width = $w * $ratio;
-      $height= $h * $ratio;
-      $x     = 0;
+      $height = $h * $ratio;
+      $x = 0;
     }
     $new = imagecreatetruecolor($width, $height);
     // Сохранение прозрачности

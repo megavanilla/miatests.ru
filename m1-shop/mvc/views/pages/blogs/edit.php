@@ -30,7 +30,7 @@ if (!empty($params) && array_key_exists(0, $params)) {
   </div>
   <div class="form-check">
     <label class="form-check-label" for="ava">Изображение</label>
-    <input type="file" class="form-check-input" id="ava" name="ava">
+    <input type="file" accept="image/*" class="form-check-input" id="ava" name="ava">
   </div>
   <input type="hidden" class="form-check-input" id="id" name="id" value="<?php print($id); ?>">
   <hr/>
