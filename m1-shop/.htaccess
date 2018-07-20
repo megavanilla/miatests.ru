@@ -17,7 +17,7 @@ Options -Indexes +FollowSymLinks
     #Блокируем все скрипты, которые пытаются изменить переменную _REQUEST:
     RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
     #Перенаправляем все подобные на страницу с ошибкой 403 — запрещено
-    RewriteRule ^(.*)$ index.html [F,L]
+    RewriteRule ^(.*)$ /m1-shop/index.php [F,L]
 
     #Переадресация адреса каталога без слэша на со слэшом
     RewriteCond %{REQUEST_FILENAME} !-f
@@ -25,9 +25,10 @@ Options -Indexes +FollowSymLinks
     RewriteRule ^(.*)$ $1/ [R=301,L]
 
 
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_URI} !^/web/
-    RewriteCond %{REQUEST_URI} !^\./web/
-    RewriteRule ^(.*)/(.*)/ index.php?controller=$1&method=$2 [L,QSA]
-    RewriteRule ^index.php/(.*)/(.*)/? index.php?controller=$1&method=$2 [L,QSA]
+    RewriteRule ^(.*)/(.*)/ /?controller=$1&method=$2 [L,QSA]
+    RewriteRule ^index.php/(.*)/(.*)/? /?controller=$1&method=$2 [L,QSA]
 
 </IfModule>

@@ -1,4 +1,4 @@
-<a href="/" class="btn btn-success" role="button" aria-pressed="true">На главную</a>
+<a href="/m1-shop/" class="btn btn-success" role="button" aria-pressed="true">На главную</a>
 <hr />
 <form id="formAddNote" enctype="multipart/form-data">
   <div class="form-group">

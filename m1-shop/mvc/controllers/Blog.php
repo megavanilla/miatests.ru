@@ -14,18 +14,26 @@ use mvc\libs\Request;
 
 Class Blog extends Controller
 {
+  public function get($request = [])
+  {
+    $Request = new Request();
+    $id = $Request->getVariable($request,['id'],0);
+    $Views = new mvc\views\View();
+    $mBlog = new mvc\models\Blog();
+    $Views->showPage('blogs/get', $mBlog->get(null, $id));
+  }
 
   public function getList()
   {
     $Views = new mvc\views\View();
     $mBlog = new mvc\models\Blog();
-    $Views->showPage('blogs\get_list', $mBlog->get());
+    $Views->showPage('blogs/get_list', $mBlog->get());
   }
 
   public function addNote($request = [])
   {
     $Views = new mvc\views\View();
-    $Views->showPage('blogs\add');
+    $Views->showPage('blogs/add');
   }
 
   public function editNote($request = [])
@@ -36,7 +44,7 @@ Class Blog extends Controller
 
     $id = $Request->getVariable($request, ['id'], null);
     $data = $mBlog->get(null, $id);
-    $Views->showPage('blogs\edit', $data);
+    $Views->showPage('blogs/edit', $data);
   }
 
   public function add($request = [])
@@ -65,7 +73,7 @@ Class Blog extends Controller
 
     $href = self::uploadImg();
 
-    $status = $mBlog->edit($id, $text, $description, $href);
+    $status = $mBlog->edit($id, $description, $text, $href);
     print(json_encode(['status'=>($status)?'ok':'error'], JSON_UNESCAPED_UNICODE));
   }
 

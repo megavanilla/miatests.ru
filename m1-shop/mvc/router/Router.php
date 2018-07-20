@@ -43,7 +43,7 @@ class Router
 
     public function route()
     {
-        $controller = "mvc\controllers\\$this->controller";
+        $controller = "mvc\controllers\\".ucwords($this->controller);
         $method = $this->method;
         if ($controller == '' || $method == '') {
             trigger_error("Не указан контроллер или его метод.", E_USER_WARNING);

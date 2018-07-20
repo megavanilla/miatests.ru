@@ -14,10 +14,12 @@ class Config
   public function getConfig($path, $name){
     global $Configs;
 
-    $pathConf = 'mvc/configs/'.$path.'.php';
+    $pathConf = __DIR__.'/'.$path.'.php';
 
     if(is_file($pathConf)){
       $Configs['conf'][$name] = include_once($pathConf);
     }
+
+    return $Configs;
   }
 }

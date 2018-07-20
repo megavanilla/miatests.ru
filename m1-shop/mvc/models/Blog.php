@@ -35,6 +35,7 @@ class Blog extends Model
     $data = [
       'description' => $description,
       'text' => $text,
+      'datetime_update' => date("Y-m-d H:i:s", time())
     ];
 
     if($href){

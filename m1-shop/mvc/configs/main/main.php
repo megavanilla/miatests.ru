@@ -1,6 +1,6 @@
 <?php
 return [
-        'default_controller' => 'blog',
+        'default_controller' => 'Blog',
         'default_method' => 'getList',
         'root' => '../../',
         'uploads' => '../../web/uploads/'

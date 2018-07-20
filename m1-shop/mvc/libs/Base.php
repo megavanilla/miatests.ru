@@ -7,9 +7,6 @@ class Base
   public function dump($variable)
   {
     ob_start();
-    echo "\n<pre>\n";
-    var_dump($variable);
-    echo "\n</pre>\n";
     $out = ob_get_clean();
     print $out;
   }

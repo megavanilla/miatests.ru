@@ -1,18 +1,19 @@
 <?php
 
-use mvc\router\Router;
+use \mvc\router\Router;
+use \mvc\configs\Config;
 
 $Configs = [];
 
 // загрузка классов из lib
-spl_autoload_register('Autoload7a6ddc2345f40c203fc95b0725b4e378');
+spl_autoload_register('Autoload7a23ewc2345f40c203fc95b0725b4e378');
 
 /**
  * Функция автозагрузки.
  *
  * @param $class
  */
-function Autoload7a6ddc2345f40c203fc95b0725b4e378($class)
+function Autoload7a23ewc2345f40c203fc95b0725b4e378($class)
 {
   $folder = [
       __DIR__ . '/'
@@ -42,7 +43,7 @@ function loadFromLibs($class, $base_dir)
 }
 
 //Загрузим конфиг параметры
-$Config = new \mvc\configs\Config();
+$Config = new Config();
 $Config->getConfig('main/main', 'main');
 $Config->getConfig('db/mysql/connect', 'db');
 

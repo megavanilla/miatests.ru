@@ -15,7 +15,7 @@ if (!empty($params) && array_key_exists(0, $params)) {
   $href_img = array_key_exists('href_img', $params[0]) ? $params[0]['href_img'] : $href_img;
 }
 ?>
-<a href="/" class="btn btn-success" role="button" aria-pressed="true">На главную</a>
+<a href="/m1-shop/" class="btn btn-success" role="button" aria-pressed="true">На главную</a>
 <hr />
 <form id="formEditNote" enctype="multipart/form-data">
   <div class="form-group">

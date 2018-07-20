@@ -5,10 +5,7 @@ function addNote(){
     return;
   }
 
-  var formElement = document.querySelector("form");
-  var request = new XMLHttpRequest();
-  request.open("POST", "submitform.php");
-  request.send(new FormData(data));
+  let formElement = document.querySelector("form");
 
   let description = data.querySelector('#description').value;
   let text = data.querySelector('#text').value;
@@ -16,7 +13,7 @@ function addNote(){
 
   ajax(
     {
-      url: '/blog/add/', //путь к скрипту, который обрабатывает задачу
+      url: '/m1-shop/blog/add/', //путь к скрипту, который обрабатывает задачу
       type: 'json',
       async: true,
       data:  {
@@ -28,7 +25,7 @@ function addNote(){
       {
         if(data.hasOwnProperty('status') && data['status'] === 'ok'){
           alert('Запись успешно добавлена.');
-          location.assign('/');
+          location.assign('/m1-shop/');
         }else{
           alert('Не удалось добавить запись.');
         }
@@ -50,7 +47,7 @@ function editNote(id){
 
   ajax(
     {
-      url: '/blog/edit/', //путь к скрипту, который обрабатывает задачу
+      url: '/m1-shop/blog/edit/', //путь к скрипту, который обрабатывает задачу
       type: 'json',
       async: true,
       data:  {
@@ -63,7 +60,7 @@ function editNote(id){
       {
         if(data.hasOwnProperty('status') && data['status'] === 'ok'){
           alert('Запись успешно изменена.');
-          location.assign('/');
+          location.assign('/m1-shop/');
         }else{
           alert('Не удалось изменить запись.');
         }
@@ -77,7 +74,7 @@ function delNote(id){
   if(!isSure){return;}
   ajax(
     {
-      url: '/blog/del/', //путь к скрипту, который обрабатывает задачу
+      url: '/m1-shop/blog/del/', //путь к скрипту, который обрабатывает задачу
       type: 'json',
       async: true,
       data:  {id: id},
