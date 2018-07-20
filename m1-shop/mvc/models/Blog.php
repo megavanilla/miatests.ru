@@ -20,7 +20,7 @@ class Blog extends Model
     return $this->get();
   }
 
-  public function add($description, $text, $href)
+  public function add($text, $description, $href)
   {
     $data = [
       'description' => $description,
