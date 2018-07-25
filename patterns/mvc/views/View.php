@@ -8,12 +8,21 @@
 
 namespace mvc\views;
 
+use mvc\libs\Request as libRequest;
+
 class View
 {
-  public function showPage($page, $params = [])
+  protected $libRequest;
+
+  public function __construct()
+  {
+    $this->libRequest = new libRequest();
+  }
+
+  public function showPage($page, $params = [], $title = '')
   {
     ob_start();
-    $this->loadLayout('header');
+    $this->loadLayout('header', $title);
 
     if (!$page) {
       $this->loadPage('main', $params);
@@ -25,8 +34,11 @@ class View
     print(ob_get_clean());
   }
 
-  public function loadLayout($name)
+  public function loadLayout($name, $title = '')
   {
+    global $Configs;
+    $title = (!empty($title)) ? $title : $this->libRequest->getVariable($Configs, ['conf', 'main', 'default_title'],
+      null);
     $layout_file = __DIR__ . '/layouts/' . $name . '.tpl';
     if (is_file($layout_file)) {
       include_once($layout_file);

@@ -2,9 +2,9 @@
 return [
         'mysql' => [
                 'host' => 'localhost',
-                'user' => '045686016_m1shop',
+                'user' => '045686016_patter',
                 'pass' => 'Gfhjkm_jino_ru',
-                'dbName' => 'megavanilla_m1-shop'
+                'dbName' => 'megavanilla_patterns'
         ]
 ];
 ?>

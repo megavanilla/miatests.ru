@@ -1,7 +1,8 @@
 <?php
 return [
-  'default_controller' => 'Blog',
-  'default_method' => 'getList',
+  'default_controller' => 'PatternsExample\Patterns',
+  'default_method' => 'show',
+  'default_title' => $_SERVER['SERVER_NAME'],
   'root' => '../../',
-  'uploads' => '/m1-shop/web/uploads/'
+  'uploads' => '/patterns/web/uploads/'
 ];

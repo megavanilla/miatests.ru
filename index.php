@@ -15,8 +15,13 @@
             </thead>
             <tbody>
                 <tr>
+                    <td><a href="./patterns">Паттерны</a>:</td>
+                    <td><a href="https://github.com/megavanilla/">.../megavanilla/patterns</a></td>
+                    <td>PHP</td>
+                </tr>
+                <tr>
                     <td><a href="./m1-shop">m1-shop</a>:</td>
-                    <td><a href="https://github.com/megavanilla/">.../megavanilla/profit</a></td>
+                    <td><a href="https://github.com/megavanilla/">.../megavanilla/m1-shop</a></td>
                     <td>PHP, JS, CSS, Bootstrap, Jquery</td>
                 </tr>
                 <tr>
