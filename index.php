@@ -16,7 +16,7 @@
             <tbody>
                 <tr>
                     <td><a href="./patterns">Паттерны</a>:</td>
-                    <td><a href="https://github.com/megavanilla/">.../megavanilla/patterns</a></td>
+                    <td><a href="https://github.com/megavanilla/miatests.ru/tree/master/patterns">.../megavanilla/patterns</a></td>
                     <td>PHP</td>
                 </tr>
                 <tr>
