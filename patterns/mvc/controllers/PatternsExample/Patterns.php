@@ -40,6 +40,12 @@ class Patterns extends Controller
     $Views->showPage('patterns/show', [], 'Паттерны проектирования');
   }
 
+  public function traits()
+  {
+    //Затестим трейты
+    $this->printHello();
+  }
+
   public function singleton()
   {
     $variableOne = Singleton::getInstance();
@@ -48,10 +54,6 @@ class Patterns extends Controller
 
     $variableTwo = Singleton::getInstance();
     $this->Simple::dump($variableTwo->getProperty('var1'));
-
-    //Затестим трейты
-    $this->printHello();
-
   }
 
   public function factory()

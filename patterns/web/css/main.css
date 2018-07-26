@@ -39,3 +39,7 @@ fieldset legend {
     margin-bottom: 0;
     margin-left: 16px;
 }
+
+.alert-success {
+    padding: 10px 0;
+}
