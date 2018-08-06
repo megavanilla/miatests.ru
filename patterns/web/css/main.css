@@ -43,3 +43,30 @@ fieldset legend {
 .alert-success {
     padding: 10px 0;
 }
+
+.patterns span {
+    border: 2px solid black;
+    text-transform: uppercase;
+    padding: 2px 4px;
+    cursor: pointer;
+}
+
+.patterns-element {
+    margin: 7px;
+}
+
+.patterns-element > label {
+    margin-bottom: 5px;
+}
+
+.patterns-green {
+    background-color: #CCFF99;
+}
+
+.patterns-blue {
+    background-color: #99CCFF;
+}
+
+.patterns-red {
+    background-color: #FFCC99;
+}
